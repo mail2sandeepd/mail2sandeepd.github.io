@@ -1,109 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Index Page</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    background-color: #f5f5f5;
-    min-height: 100vh;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Construction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
 
-  #clock {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.5rem;
-    color: #333;
-  }
+        #construction-gif {
+            width: 200px;
+            height: auto;
+        }
 
-  .calculator {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-  }
+        #title {
+            font-size: 24px;
+            margin-top: 20px;
+        }
 
-  .calculator h2 {
-    margin-top: 0;
-    font-size: 1.5rem;
-    color: #333;
-  }
-
-  .calculator label {
-    display: block;
-    margin-bottom: 8px;
-    color: #555;
-  }
-
-  .calculator input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-
-  .calculator button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-</style>
+        #clock {
+            font-size: 40px;
+            color: #333;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-  <div id="clock"></div>
-  <div class="calculator">
-    <h2>SIP Calculator</h2>
-    <label for="amount">Investment Amount</label>
-    <input type="number" id="amount" placeholder="Enter amount" step="any" required>
-    
-    <label for="rate">Annual Interest Rate (%)</label>
-    <input type="number" id="rate" placeholder="Enter rate" step="any" required>
-    
-    <label for="years">Number of Years</label>
-    <input type="number" id="years" placeholder="Enter years" step="1" required>
-    
-    <button onclick="calculateSIP()">Calculate</button>
-    
-    <p id="result"></p>
-  </div>
+    <img id="construction-gif" src="underconstruction.jpg" alt="Under Construction">
+    <h1 id="title">Under Construction</h1>
+    <div id="clock"></div>
 
-  <script>
-    function updateClock() {
-      const now = new Date();
-      const hours = now.getHours().toString().padStart(2, '0');
-      const minutes = now.getMinutes().toString().padStart(2, '0');
-      const seconds = now.getSeconds().toString().padStart(2, '0');
-      document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
-    }
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
 
-    function calculateSIP() {
-      const amount = parseFloat(document.getElementById('amount').value);
-      const rate = parseFloat(document.getElementById('rate').value);
-      const years = parseInt(document.getElementById('years').value);
-      const futureValue = amount * Math.pow(1 + rate / 100, years);
-      const resultElement = document.getElementById('result');
-      resultElement.textContent = `After ${years} years, your investment will be worth $${futureValue.toFixed(2)}`;
-    }
-
-    updateClock();
-    setInterval(updateClock, 1000);
-  </script>
+        setInterval(updateClock, 1000);
+    </script>
 </body>
 </html>
